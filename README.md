@@ -35,7 +35,7 @@ Les imatges dels Pokémon es troben al directori public/images/.
 - Interfície interactiva: Permet als usuaris explorar informació de Pokémon de manera fàcil i visual.
 
 # Contribució
-- Les contribucions són benvingudes! Si vols contribuir:
+Les contribucions són benvingudes! Si vols contribuir:
 
 1. Fes un fork del repositori.
     

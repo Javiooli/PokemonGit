@@ -30,11 +30,11 @@ Les dades es carreguen des del fitxer pokemon_data.json.
 Les imatges dels Pokémon es troben al directori public/images/.
 
 ## Característiques
-- Arquitectura MVVM: Implementació de l'enfocament Model-View-ViewModel amb els fitxers model.js, viewModel.js i codiMVVM.js.
+- Arquitectura MVVM: Implementació de l'enfocament Model-View-ViewModel amb els fitxers model.js, viewModel.js i Vue gestionant la vista, amb codi.js iniciant la Vue App, que es troba a src/App.js.
 - Dades visuals: Imatges de Pokémon disponibles al directori public/images/.
-- Interfície interactiva: Permet als usuaris explorar informació de Pokémon de manera fàcil i visual.
+- Interfície interactiva: Permet als usuaris formar equips de Pokémon de manera fàcil i visual.
 
-# Contribució
+## Contribució
 Les contribucions són benvingudes! Si vols contribuir:
 
 1. Fes un fork del repositori.
@@ -54,9 +54,9 @@ Les contribucions són benvingudes! Si vols contribuir:
     ```
 5. Obre una pull request.
 
-# Llicència
+## Llicència
 Aquest projecte està llicenciat sota la MIT License.
 
-# Contacte
+## Contacte
 Per a qualsevol consulta o suggeriment, pots contactar amb mi a través del meu correu electrònic:
     24.javier.pedragosa@insdanielblanxart.cat.

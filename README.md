@@ -1,7 +1,7 @@
 # PokemonGit
 
 ## Descripció
-PokemonGit és un projecte que utilitza dades de Pokémon per crear una aplicació interactiva basada en JavaScript. L'objectiu principal és mostrar informació sobre diferents Pokémon utilitzant un enfocament MVVM (Model-View-ViewModel) i proporcionar una experiència visual atractiva.
+PokemonGit és un projecte que utilitza dades de Pokémon per crear una aplicació interactiva basada en JavaScript. L'objectiu principal és mostrar informació sobre diferents Pokémon utilitzant un enfocament MVVM (Model-View-ViewModel), permetre crear equips i enfrontar-los entre ells.
 
 ## Taula de Continguts
 - [Instal·lació](#instal·lació)

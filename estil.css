@@ -1,0 +1,274 @@
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #40e0d0; /* Turquesa */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative; /* Important per al pseudo-element */
+}
+
+/* Necessari per tenir el fons amb la imatge semi-transparent per sobre */
+body::before {
+    content: "";
+    position: fixed; /* Fixar la imatge a la finestra */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Assegura que el pseudo-element cobreixi tota la pàgina */
+    background-image: url('./Background.jpg'); /* Patró subtil */
+    background-size: 200px; /* Mida del patró */
+    background-position: center; /* Centrar la imatge */
+    background-repeat: repeat; /* Repetir la imatge */
+    opacity: 0.5; /* Transparència de la imatge */
+    z-index: -1; /* Asegura que la imatge estigui darrere del contingut */
+}
+
+
+/* Encapçalaments */
+h1, h2 {
+    font-weight: bold;
+    color: #fff; /* Color blanc per a un contrast més alt amb el fons */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Ombra més fosca per destacar més el text */
+    padding: 20px 30px; /* Més espai al voltant del text */
+    border-radius: 15px; /* Cantonades arrodonides per suavitzar */
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(255, 0, 255, 0.8)); /* Gradient vibrant */
+    display: inline-block; /* Que el fons envolti només el text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombratge més fort per a un efecte de profunditat */
+    margin: 20px 0; /* Separar els títols de la resta del contingut */
+    border: 3px solid #ffcc33; /* Borde destacat */
+}
+
+
+/* Estil per al paràgraf de crèdits */
+#credits-display {
+    font-size: 1.5em; /* Augmentem la mida del text per a què sigui més destacat */
+    font-weight: bold;
+    color: #fff; /* Color blanc per a un contrast fort amb el fons */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Ombra similar per destacar el text */
+    padding: 15px 25px; /* Més espai per fer-ho més notable */
+    border-radius: 12px; /* Cantons arrodonits */
+    background: linear-gradient(135deg, rgba(255, 223, 0, 0.8), rgba(255, 69, 0, 0.8)); /* Gradient vibrant (groc i taronja) */
+    display: block; /* Canviem a display:block perquè ocupi tota la línia */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombra per profunditat */
+    margin-top: 20px; /* Afegim un marge superior per separació */
+    border: 3px solid #ffcc33; /* Borde daurat per contrast */
+}
+
+.player-setup-section {
+    font-size: 1.5em; /* Augmentem la mida del text per a què sigui més destacat */
+    font-weight: bold;
+    color: #fff; /* Color blanc per a un contrast fort amb el fons */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Ombra similar per destacar el text */
+    padding: 15px 25px; /* Més espai per fer-ho més notable */
+    border-radius: 12px; /* Cantons arrodonits */
+    background: linear-gradient(135deg, rgba(255, 223, 0, 0.8), rgba(255, 69, 0, 0.8)); /* Gradient vibrant (groc i taronja) */
+    display: block; /* Canviem a display:block perquè ocupi tota la línia */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombra per profunditat */
+    margin-top: 20px; /* Afegim un marge superior per separació */
+    border: 3px solid #ffcc33; /* Borde daurat per contrast */
+}
+
+
+/* Contenidor principal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Graella Pokémon */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Targetes Pokémon */
+.pokemon-card {
+    width: 130px;
+    height: 280px;
+    text-align: center;
+    border: 2px solid #ffcc33;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Imatges dels Pokémon */
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 3px solid #ff6699;
+    transition: border-color 0.3s ease;
+}
+
+.pokemon-card:hover img {
+    border-color: #ffcc33;
+}
+
+/* Text dins la targeta */
+.pokemon-card h3 {
+    font-size: 1.3em;
+    margin: 5px 0;
+    color: #444;
+}
+
+.pokemon-card p {
+    margin: 3px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Estat seleccionat */
+.pokemon-card.selected {
+    border: 3px solid green;
+    padding-bottom: 13px;
+    background: rgba(0, 255, 0, 0.2);
+}
+
+/* Estil per al contenidor dels tipus */
+.types-container {
+    display: flex;
+    justify-content: center; /* Centrar les icones */
+    gap: 10px; /* Espai entre les icones */
+    margin-top: 10px; /* Espai per separar les icones del nom */
+}
+
+.type-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Equip seleccionat */
+#selected-team-grid {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: 300px;
+    max-width: 1071px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#second-team-grid {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 1060px;
+    height: 300px;
+    max-width: 1060px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estil per al missatge de l'equip buit */
+#team-grid-empty-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6699; /* Color destacat per al text */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Ombra suau per destacar més el text */
+    background: rgba(255, 255, 255, 0.8); /* Fons clar per ressaltar el text */
+    padding: 20px 40px; /* Paddings per a un espai agradable al voltant del text */
+    border-radius: 12px; /* Cantons arrodonits per suavitzar l'aparença */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Ombra suau per a un efecte de profunditat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Alçada per a centrar el missatge verticalment */
+    margin: 20px 0; /* Marge superior i inferior per separació */
+    text-align: center; /* Centrat del text */
+    width: 80%; /* Amplada adaptativa */
+    max-width: 600px; /* Màxima amplada per no excedir de la pantalla */
+    margin-left: auto; /* Centrat horitzontal */
+    margin-right: auto; /* Centrat horitzontal */
+    font-family: 'Poppins', sans-serif; /* Font consistent amb el teu estil general */
+}
+
+/* Efecte hover per cridar l'atenció */
+#team-grid-empty-message:hover {
+    background: rgba(255, 255, 255, 1); /* Fons una mica més intens per destacar el missatge */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Ombra més forta en el hover */
+    transform: scale(1.05); /* Augmenta lleugerament la mida al passar el ratolí */
+    transition: all 0.3s ease; /* Transició suau */
+}
+
+
+/* Botons */
+button {
+    background: #ff6699;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #ff3366;
+    transform: scale(1.05);
+}
+
+/* Formulari d'ordenació */
+#sort-options-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#battle-log-container {
+    height: 250px;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#battle-log {
+    list-style: none;
+    height: 200px;
+    overflow: auto;
+    text-align: center;
+    justify-content: center;
+    padding-right: 20px;
+}
